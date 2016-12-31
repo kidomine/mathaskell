@@ -103,25 +103,6 @@ module Matrix3
     (Matrix3x3 (Point3D j k l) (Point3D m n o) (Point3D p q r)))
     = Matrix3x3
       (Point3D
-        ((a * j) + (b * k) + (c * l))
-        ((d * j) + (e * k) + (f * l))
-        ((g * j) + (h * k) + (i * l)))
-      (Point3D
-        ((a * m) + (b * n) + (c * o))
-        ((d * m) + (e * n) + (f * o))
-        ((g * m) + (h * n) + (i * o)))
-      (Point3D
-        ((a * p) + (b * q) + (c * r))
-        ((d * p) + (e * q) + (f * r))
-        ((g * p) + (h * q) + (i * r)))
-      
-  -- (a * d) + (b * e) + (c * f)
-  mat3_mmul2 :: (Matrix, Matrix) -> Matrix
-  mat3_mmul2 (
-    (Matrix3x3 (Point3D a b c) (Point3D d e f) (Point3D g h i)),
-    (Matrix3x3 (Point3D j k l) (Point3D m n o) (Point3D p q r)))
-    = Matrix3x3
-      (Point3D
         (mat3_dot ((Point3D a b c), (Point3D j k l)))
         (mat3_dot ((Point3D d e f), (Point3D j k l)))
         (mat3_dot ((Point3D g h i), (Point3D j k l))))

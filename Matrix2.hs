@@ -66,16 +66,6 @@ module Matrix2
     (Matrix2x2 (Point2D a b) (Point2D c d)),
     (Matrix2x2 (Point2D e f) (Point2D g h)))
     = Matrix2x2
-      (Point2D ((a * e) + (c * f)) ((a * g) + (c * h)))
-      (Point2D ((b * e) + (d * f)) ((b * g) + (d * h)))
-      
-  -- a c * e g
-  -- b d   f h
-  mat2_mmul2 :: (Matrix, Matrix) -> Matrix
-  mat2_mmul2 (
-    (Matrix2x2 (Point2D a b) (Point2D c d)),
-    (Matrix2x2 (Point2D e f) (Point2D g h)))
-    = Matrix2x2
       (Point2D
         (mat2_dot ((Point2D a c), (Point2D e f)))
         (mat2_dot ((Point2D a c), (Point2D g h)))
