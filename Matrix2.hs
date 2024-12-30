@@ -21,7 +21,7 @@ module Matrix2
       (Point2D ((-1) * c) a)
       
   mat2_ident :: Matrix
-  mat2_ident = (Matrix2x2 (Point2D 1 0) (Point2D 0 1))
+  mat2_ident = Matrix2x2 (Point2D 1 0) (Point2D 0 1)
   
   mat2_det :: Matrix -> Float
   mat2_det (Matrix2x2 (Point2D a b) (Point2D c d))
@@ -33,14 +33,14 @@ module Matrix2
  
   mat2_smul :: (Matrix, Float) -> Matrix
   mat2_smul (
-    (Matrix2x2 (Point2D a b) (Point2D c d)), s)
+    Matrix2x2 (Point2D a b) (Point2D c d), s)
     = Matrix2x2
       (Point2D (a * s) (b * s))
       (Point2D (c * s) (d * s))
     
   mat2_sdiv :: (Matrix, Float) -> Matrix
   mat2_sdiv (
-    (Matrix2x2 (Point2D a b) (Point2D c d)), s)
+    Matrix2x2 (Point2D a b) (Point2D c d), s)
     = Matrix2x2
       (Point2D (a / s) (b / s))
       (Point2D (c / s) (d / s))
