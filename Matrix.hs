@@ -26,10 +26,10 @@ module Matrix
   
   mat2_dot :: (Point, Point) -> Float
   mat2_dot (
-    (Point2D a b), (Point2D c d))
+    Point2D a b, Point2D c d)
     = (a * c) + (b * d)
     
   mat3_dot :: (Point, Point) -> Float
   mat3_dot (
-    (Point3D a b c), (Point3D d e f))
+    Point3D a b c, Point3D d e f)
     = (a * d) + (b * e) + (c * f)
